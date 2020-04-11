@@ -1,0 +1,12 @@
+{
+	// Config file for Catalog Workers Debug on VSCode
+  "version": "0.1.0",
+  "configurations": [
+    {
+			"type": "node",
+			"request": "launch",
+			"name": "Homem APP API",
+			"program": "${workspaceFolder}/index.js"
+		}
+  ]
+}
