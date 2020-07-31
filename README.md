@@ -38,6 +38,9 @@ O baixo acoplamento facilita os testes unitários porque existem menos dependenc
 
 A implementação é o mais simples possível e segue a Regra de Dependencia, além de seguir uma estrutura de diretórios inspirada no DDD.
 
+
+![clean-node](https://github.com/Homem-App/api/blob/feat/refactor/clean.png?raw=true)
+
 A camada azul (Frameworks) contempla todos os módulos que dependem de um framework, como express e mongoose, faz a conexão com o banco de dados MongoDb. Ela também configura os middlewares e rotas usando decorators. Uncle Bob "admite" que o módulo main, responsável por iniciar a aplicação seja um módulo "sujo" eu resolvi espalhar um pouco essa sujeira por módulos diferentes da mesma camada.
 
 Os factories são importantes nessa camada, são através deles que as dependencias do banco de dados são injetadas no controllers, que são carregados pelos routes. Assim conseguimos manter a regra de dependencia na camada de Application Businnes Rules.
