@@ -1,10 +1,8 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 class Mongo {
   constructor() {
-    mongoose.connect(`
-    mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}`, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(`mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}`, { useNewUrlParser: true, useUnifiedTopology: true });
 
     mongoose.connection.on('connected', () => {
       console.log('Mongo OK');
@@ -20,4 +18,4 @@ class Mongo {
   }
 }
 
-module.exports = new Mongo();
+export const MongoService = new Mongo();
