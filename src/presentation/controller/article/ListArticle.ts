@@ -1,6 +1,5 @@
 import { okResponse, serverError } from '../../helper/http-helper'; 
-import { Controller } from '../../protocols';
-import { HttpRequest,HttpResponse } from '../../protocols';
+import { Controller, HttpRequest, HttpResponse } from '../../protocols';
 import { listAll } from '../../../domain/article/use-cases/list-articles';
 
 export class ListArticle implements Controller {

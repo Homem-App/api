@@ -20,6 +20,4 @@ class ArticleSchema extends MongoService {
   }
 }
 
-
-
 export const articleSchema = new ArticleSchema();
