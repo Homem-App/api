@@ -1,4 +1,7 @@
-const adaptRoute = (controllerRoute) => async (req, res) => {
+import { Request, Response } from 'express';
+
+// TODO INTERFACE controllerRoute
+export const adaptRoute = (controllerRoute: any) => async (req: Request, res: Response) => {
   const httpRequest = {
     body: req.body,
     params: req.params,
@@ -6,8 +9,4 @@ const adaptRoute = (controllerRoute) => async (req, res) => {
   };
   const httpResponse = await controllerRoute(httpRequest);
   res.status(httpResponse.statusCode).json(httpResponse.body);
-}
-
-module.exports = {
-  adaptRoute,
 }
