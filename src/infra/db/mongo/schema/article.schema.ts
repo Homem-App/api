@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const MongoService = require('../../protocols/MongoService');
+import mongoose from 'mongoose';
+import { MongoService } from '../../protocols/MongoService';
 
 const schema = new mongoose.Schema({
   title: String,
@@ -18,7 +18,8 @@ class ArticleSchema extends MongoService {
     const model = mongoose.model('Article', schema);
     super(model);
   }
-  
 }
 
-module.exports = new ArticleSchema();
+
+
+export const articleSchema = new ArticleSchema();
