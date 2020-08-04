@@ -1,4 +1,7 @@
-class MongoService {
+export class MongoService {
+
+  private readonly mongoSchema: any;
+  
   constructor (mongoSchema) {
     this.mongoSchema = mongoSchema;
   }
@@ -10,5 +13,3 @@ class MongoService {
     return this.mongoSchema.find(data)
   }
 }
-
-module.exports = MongoService;
