@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
 
 class Mongo {
-  constructor() {
+
+  async disconnect () {
+    return mongoose.connection.close()
+  }
+
+  async connect () {
     mongoose.connect(`mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}`, { useNewUrlParser: true, useUnifiedTopology: true });
 
     mongoose.connection.on('connected', () => {
@@ -15,6 +20,10 @@ class Mongo {
     mongoose.connection.on('disconnected', () => {
       console.log('Mongo Bye');
     });
+  }
+
+  async status () {
+    return mongoose.connection.readyState;
   }
 }
 
